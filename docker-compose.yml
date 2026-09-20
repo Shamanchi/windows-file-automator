@@ -1,0 +1,16 @@
+﻿version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: windows-file-automator
+    environment:
+      - WATCH_PATHS=\
+      - OUTPUT_PATH=\
+      - EXCEL_TEMPLATE=\
+      - LOG_LEVEL=\
+      - DATABASE_URL=\
+    volumes:
+      - ./data:/app/data
+      - ./output:/app/output
+    restart: unless-stopped
